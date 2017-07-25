@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script src="../../node_modules/jquery/dist/jquery.js"></script>
+<script>
+  $(function () {
+//      var url = 'https://route.showapi.com/109-35?showapi_appid=34477&showapi_sign=cfa5957a730f43d38886bd16469b2a86&channelId=5572a108b3cdc86cf39001cd&needContent=0&needHtml=2&page=2';
+    var url = 'http://192.168.0.222/PurchaseInfo/GetPurchaseInfoPage';
+
+//      $.ajax({
+//        url: url,
+////        url: 'http://192.168.0.222/PurchaseInfo/GetPurchaseInfoPage',
+//        type: 'post',
+//        success:function(data){
+//          console.log(data)
+//        },
+//        error: function () {
+//          console.log("222")
+//        }
+//      })
+
+    fetch(url).then(function(response) {
+      return response.json();
+    }).then(function(data) {
+      console.log(data);
+    }).catch(function(e) {
+      console.log("Oops, error");
+    });
+  })
+</script>
+</body>
+</html>
